@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+      <button class="btn btn-primary" (click)="add()">Add Student</button>
+  </div>
+</div>
+<div class="row">
+   <div class="col-md-12">
+     <table class="table table-striped">
+        <thead>
+            <th>#</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+             @for(student of studentList;track $index){
+            <tr>
+                <td>{{student.id}}</td>
+                <td>{{student.firstname}}</td>
+                <td>{{student.lastname}}</td>
+                <td>{{student.age}}</td>
+                <td>
+                  <button type="button" class="btn btn-info" (click)="edit(student.id)">Edit</button>
+                  <button type="button" class="btn btn-danger" (click)="delete(student.id)">Delete</button>
+
+                </td>
+            </tr>
+         }
+        </tbody>
+     </table>
+   </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="text-center">Add Student</h2>
+  <div class="container">
+    <form (ngSubmit)="store()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">FirstName</label>
+        <input type="text" class="form-control" placeholder="Enter Firstname" [(ngModel)]="newStudent.firstname" name="firstname">
+
+      </div>
+      <div class="mb-3">
+        <label for="lastname" class="form-label">LastName</label>
+        <input type="text" class="form-control" name="lastname" placeholder="Enter LastName" [(ngModel)]="newStudent.lastname">
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" name="age" placeholder="Enter Age" [(ngModel)]="newStudent.age">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
