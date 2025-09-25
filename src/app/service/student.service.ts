@@ -29,9 +29,18 @@ export class StudentService {
     return this.students.find(s => s.id === id);
   }
   updateStudent(s: Student) {
-    const student = this.students.find(x => x.id === s.id);
+
+    const student = this.students.find(x => x.id === Number(s.id));
+    console.log('Found student:', student);
+
     if (student){
-       Object.assign(student, s); // updates the existing object
+     console.log("inside if...");
+
+     Object.assign(student, {
+      firstname: s.firstname || student.firstname,
+      lastname: s.lastname || student.lastname,
+      age: s.age != null ? s.age : student.age,
+    });// updates the existing object
     }
   }
   private nextId(): number {
