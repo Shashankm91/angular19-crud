@@ -18,11 +18,11 @@ export class StudentListComponent implements OnInit{
   private router=inject(Router);
   ngOnInit(): void {
     this.getStudent();
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.getStudent();
-    });
+    // this.router.events.pipe(
+    //   filter(event => event instanceof NavigationEnd)
+    // ).subscribe(() => {
+    //   this.getStudent();
+    // });
   }
   getStudent(){
     this.studentList=this.studentSrv.getStudents();
